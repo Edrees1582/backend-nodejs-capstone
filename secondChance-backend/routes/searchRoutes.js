@@ -29,10 +29,10 @@ router.get('/', async (req, res, next) => {
             query.age_years = { $lte: parseInt(req.query.age_years) };
         }
 
-        // Task 4: Fetch filtered secondChanceItems using the find(query) method. Make sure to use await and store the result in the `secondChanceItems` constant
-        const secondChanceItems = await collection.find(query).toArray();
+        // Task 4: Fetch filtered gifts using the find(query) method. Make sure to use await and store the result in the `gifts` constant
+        const gifts = await collection.find(query).toArray();
 
-        res.json(secondChanceItems);
+        res.json(gifts);
     } catch (e) {
         next(e);
     }
