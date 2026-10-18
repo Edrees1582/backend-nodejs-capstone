@@ -30,7 +30,7 @@ router.get('/', async (req, res, next) => {
         const db = await connectToDatabase();
 
         //Step 2: task 2
-        const collection = db.collection("secondChanceItems");
+        const collection = db.collection(process.env.MONGO_COLLECTION);
 
         //Step 2: task 3
         const secondChanceItems = await collection.find({}).toArray();
